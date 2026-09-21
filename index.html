@@ -17,13 +17,15 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-primary); line-height: 1.6; padding: 2rem 1rem; }
         .container { max-width: 950px; margin: 0 auto; }
-        header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 2rem; }
+        header { text-align: center; padding: 3rem 0; border-bottom: 1px solid var(--border-color); margin-bottom: 2.5rem; }
+        .profile-img { width: 130px; height: 130px; border-radius: 50%; border: 3px solid var(--accent-color); margin: 0 auto 1.2rem auto; object-fit: cover; background-color: #21262d; display: flex; align-items: center; justify-content: center; color: var(--text-secondary); font-size: 0.85rem; font-weight: 600; }
         header h1 { font-size: 2.5rem; color: #ffffff; margin-bottom: 0.5rem; }
         header p { font-size: 1.2rem; color: var(--accent-color); margin-bottom: 1rem; }
         header .bio { color: var(--text-secondary); max-width: 650px; margin: 0 auto 1.5rem auto; font-size: 0.95rem; }
-        .social-links a { color: var(--accent-color); text-decoration: none; margin: 0 10px; font-weight: 500; border: 1px solid var(--border-color); padding: 6px 14px; border-radius: 6px; background-color: var(--card-bg); transition: 0.2s; }
+        .social-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 1rem; }
+        .social-links a { color: var(--accent-color); text-decoration: none; font-weight: 500; border: 1px solid var(--border-color); padding: 7px 16px; border-radius: 6px; background-color: var(--card-bg); transition: 0.2s; }
         .social-links a:hover { background-color: var(--border-color); color: #ffffff; }
-        section { margin-bottom: 2.5rem; }
+        section { margin-bottom: 3rem; }
         section h2 { font-size: 1.5rem; color: #ffffff; margin-bottom: 1.2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.4rem; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
         .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, border-color 0.2s; }
@@ -34,25 +36,33 @@
         .tag { font-size: 0.75rem; background-color: #21262d; color: var(--accent-color); padding: 3px 8px; border-radius: 12px; border: 1px solid var(--border-color); }
         .card-links a { display: inline-block; font-size: 0.85rem; color: var(--accent-color); text-decoration: none; font-weight: 600; }
         .card-links a:hover { text-decoration: underline; }
+        .list-group { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 1.5rem; }
+        .list-group ul { list-style-type: disc; padding-left: 20px; color: var(--text-secondary); }
+        .list-group li { margin-bottom: 0.6rem; font-size: 0.95rem; }
         footer { text-align: center; color: var(--text-secondary); font-size: 0.85rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Profile Header -->
         <header>
+            <div class="profile-img">Photo</div>
             <h1>Shadrack Kipkorir</h1>
             <p>Backend Software Developer | Go & System Architecture</p>
             <div class="bio">
-                Software Development student at Zone01 Kisumu specializing in backend engineering, custom routing, and database logic. Passionate about building robust web applications, APIs, and contributing to open-source ecosystems.
+                Software Engineering student at Zone01 Kisumu specializing in backend logic, API design, and systems programming with Go. Focused on writing performant, modular code and contributing to open-source software.
             </div>
             <div class="social-links">
                 <a href="https://github.com/shakipkorir" target="_blank">GitHub</a>
-                <a href="https://in/shadrack-kipkorir-095b33414" target="_blank">LinkedIn</a>
+                <a href="https://linkedin.com/in/shadrack-kipkorir-095b33414" target="_blank">LinkedIn</a>
+                <a href="https://dev.to/shakipkorir" target="_blank">Dev.to</a>
+                <a href="https://x.com/shakipkorir" target="_blank">X (Twitter)</a>
             </div>
         </header>
 
+        <!-- Internal Zone01 Curriculum Projects -->
         <section>
-            <h2>Backend & Web Applications</h2>
+            <h2>Internal Projects (Zone01 Curriculum)</h2>
             <div class="grid">
                 <div class="card">
                     <div>
@@ -60,27 +70,13 @@
                         <div class="tags">
                             <span class="tag">Go</span>
                             <span class="tag">Authentication</span>
-                            <span class="tag">SQLite / Database</span>
+                            <span class="tag">SQLite</span>
+                            <span class="tag">Middleware</span>
                         </div>
-                        <p>Engineered backend handlers, user authentication middleware, session cookie management, and post reaction logic for a fully interactive web forum.</p>
+                        <p>A full-stack collaborative platform built in Go featuring encrypted user authentication, session cookies, database interactions via SQLite, and post-reaction handlers.</p>
                     </div>
                     <div class="card-links">
-                        <a href="https://github.com/shakipkorir" target="_blank">View on GitHub &rarr;</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <h3>Safi-Budget</h3>
-                        <div class="tags">
-                            <span class="tag">Go</span>
-                            <span class="tag">Finance Tracking</span>
-                            <span class="tag">Render Live</span>
-                        </div>
-                        <p>A robust backend personal finance and budgeting utility engineered in Go, handling custom transactions and local currency tracking.</p>
-                    </div>
-                    <div class="card-links">
-                        <a href="https://github.com/shakipkorir/safi-budget" target="_blank">View Code &rarr;</a>
+                        <a href="https://github.com/shakipkorir" target="_blank">View Project &rarr;</a>
                     </div>
                 </div>
 
@@ -92,42 +88,73 @@
                             <span class="tag">REST API</span>
                             <span class="tag">JSON Parsing</span>
                         </div>
-                        <p>A backend web application that consumes and parses complex nested JSON structures from a RESTful API to track music artists and tour locations.</p>
+                        <p>Backend web service consuming a multi-endpoint RESTful API. Handles concurrent data fetching, JSON unmarshaling, and event display across multiple client views.</p>
                     </div>
                     <div class="card-links">
-                        <a href="https://github.com/shakipkorir/groupie-tracker" target="_blank">View Code &rarr;</a>
+                        <a href="https://github.com/shakipkorir" target="_blank">View Project &rarr;</a>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section>
-            <h2>Systems & Utilities</h2>
-            <div class="grid">
                 <div class="card">
                     <div>
-                        <h3>Text Processing & Formatting Utility</h3>
+                        <h3>ASCII-Art-Web</h3>
+                        <div class="tags">
+                            <span class="tag">Go</span>
+                            <span class="tag">HTTP Server</span>
+                            <span class="tag">HTML Templates</span>
+                        </div>
+                        <p>A web server application written in Go that receives user input, applies graphic text conversion banners, and handles custom HTTP response codes and error routing.</p>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/shakipkorir" target="_blank">View Project &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div>
+                        <h3>Go-Reloaded (Text Processing Utility)</h3>
                         <div class="tags">
                             <span class="tag">Go</span>
                             <span class="tag">String Manipulation</span>
                             <span class="tag">Algorithms</span>
                         </div>
-                        <p>A text completion and formatting tool designed in Go to handle advanced string transformations, base conversions, and punctuation formatting.</p>
+                        <p>A text completion and formatting tool designed in Go to handle advanced string transformations, base conversions (hex/bin), and punctuation formatting rules.</p>
                     </div>
                     <div class="card-links">
-                        <a href="https://github.com/shakipkorir" target="_blank">View Code &rarr;</a>
+                        <a href="https://github.com/shakipkorir" target="_blank">View Project &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Personal Independent Projects -->
+        <section>
+            <h2>Personal Projects</h2>
+            <div class="grid">
+                <div class="card">
+                    <div>
+                        <h3>Safi-Budget</h3>
+                        <div class="tags">
+                            <span class="tag">Go</span>
+                            <span class="tag">Finance Engine</span>
+                            <span class="tag">Render Deployment</span>
+                        </div>
+                        <p>An independent personal finance tracking application built in Go. Manages expense records, tracks category-based allocations, and runs live in production.</p>
+                    </div>
+                    <div class="card-links">
+                        <a href="https://github.com/shakipkorir/safi-budget" target="_blank">View Code &rarr;</a>
                     </div>
                 </div>
 
                 <div class="card">
                     <div>
-                        <h3>BTrust Open-Source Contributions</h3>
+                        <h3>Open-Source Developer Contributions</h3>
                         <div class="tags">
                             <span class="tag">Git</span>
-                            <span class="tag">Pull Requests</span>
-                            <span class="tag">Collaboration</span>
+                            <span class="tag">Peer Review</span>
+                            <span class="tag">Open Source</span>
                         </div>
-                        <p>Active code contributions, feature branches, and pull requests submitted to collaborative open-source developer repositories.</p>
+                        <p>Active open-source code contributions, pull requests, and peer reviews submitted to collaborative developer repositories across the ecosystem.</p>
                     </div>
                     <div class="card-links">
                         <a href="https://github.com/btrust-builders/open-source-code-contributions" target="_blank">View Contributions &rarr;</a>
@@ -136,8 +163,43 @@
             </div>
         </section>
 
+        <!-- Articles & Publications Section -->
+        <section>
+            <h2>Articles & Technical Writing</h2>
+            <div class="list-group">
+                <ul>
+                    <li><strong>Building Stateful Web Applications in Pure Go:</strong> Exploring session cookies, authentication middleware, and secure routing architectures.</li>
+                    <li><strong>Efficient API Consumption:</strong> Patterns for fetching, unmarshaling, and presenting nested JSON structures reliably in Go.</li>
+                    <li><strong>Collaborative Git Workflows:</strong> Best practices for handling team pull requests, branch rules, and peer code reviews.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resume & Background Section -->
+        <section>
+            <h2>Resume & Technical Background</h2>
+            <div class="card">
+                <p>Software Engineering candidate at Zone01 Kisumu with direct experience in Go, database design, Linux shell scripting, and Git-based collaborative engineering.</p>
+                <div class="card-links">
+                    <a href="https://github.com/shakipkorir" target="_blank">Review GitHub Activity & Resume &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Relevant Hobbies Section -->
+        <section>
+            <h2>Relevant Hobbies & Technical Interests</h2>
+            <div class="list-group">
+                <ul>
+                    <li><strong>Precision AgTech:</strong> Researching software, IoT sensors, and data tracking applications to improve mixed agricultural operations.</li>
+                    <li><strong>Systems Programming:</strong> Exploring low-level networking, Linux command-line tooling, and custom data structures.</li>
+                    <li><strong>Technical Community Building:</strong> Participating in developer workshops and open peer-learning sessions.</li>
+                </ul>
+            </div>
+        </section>
+
         <footer>
-            <p>&copy; 2026 Shadrack Kipkorir. Built with HTML, CSS, and hosted on GitHub Pages.</p>
+            <p>&copy; 2026 Shadrack Kipkorir. Portfolio hosted on GitHub Pages.</p>
         </footer>
     </div>
 </body>
